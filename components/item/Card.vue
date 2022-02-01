@@ -8,6 +8,21 @@
       <p class="card-description" :title="data.description">
         {{ data.description }}
       </p>
+      <div class="card-collections">
+        <div
+          v-for="collection in data.collections"
+          :key="collection.id"
+          class="card-collections-item"
+        >
+          <div class="card-collections-avatar">
+            <img :src="collection.avatar.preview" :alt="collection.title">
+          </div>
+          <h4>{{ collection.title }}</h4>
+          <p v-if="collection.description">
+            {{ collection.description }}
+          </p>
+        </div>
+      </div>
     </div>
   </div>
 </template>
