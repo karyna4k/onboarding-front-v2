@@ -1,17 +1,6 @@
 <template>
   <div class="card">
-    <div class="card-preview">
-      <video
-        v-if="data.file.isVideo"
-        :playsinline="true"
-        :autoplay="true"
-        :loop="true"
-        :muted="true"
-      >
-        <source :src="data.file.preview">
-      </video>
-      <img v-else :src="data.file.preview" :alt="data.title">
-    </div>
+    <item-preview :title="data.title" :data="data.file" />
     <div class="card-body">
       <div class="card-title" :title="data.title">
         {{ data.title }}
